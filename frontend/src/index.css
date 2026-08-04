@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-slate-100 text-slate-900 font-sans antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+@layer components {
+  .panel-card {
+    @apply rounded-2xl border border-slate-200/90 bg-white shadow-sm;
+  }
+
+  .panel-card-soft {
+    @apply rounded-2xl border border-slate-200/80 bg-white/90 shadow-sm backdrop-blur;
+  }
+
+  .section-title {
+    @apply text-lg font-semibold text-slate-900;
+  }
+
+  .section-subtitle {
+    @apply mt-1 text-sm text-slate-600;
+  }
+
+  .field-input {
+    @apply w-full rounded-lg border border-slate-300 px-3 py-2 outline-none transition focus:border-cyan-500 focus:ring-2 focus:ring-cyan-100;
+  }
+
+  .btn-primary {
+    @apply rounded-lg bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-slate-700 disabled:cursor-not-allowed disabled:bg-slate-400;
+  }
+
+  .btn-muted {
+    @apply rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50;
+  }
+
+  /* Progress bar utilities */
+  .progress-bar {
+    @apply h-2.5 w-full overflow-hidden rounded-full bg-slate-200;
+  }
+
+  .progress-fill {
+    @apply h-full rounded-full transition-all duration-700 ease-out;
+  }
+
+  /* Gradient cards for stats */
+  .stat-card-blue {
+    @apply rounded-2xl bg-gradient-to-br from-blue-500 to-blue-700 p-5 text-white shadow-lg;
+  }
+
+  .stat-card-cyan {
+    @apply rounded-2xl bg-gradient-to-br from-cyan-500 to-teal-600 p-5 text-white shadow-lg;
+  }
+
+  .stat-card-emerald {
+    @apply rounded-2xl bg-gradient-to-br from-emerald-500 to-green-700 p-5 text-white shadow-lg;
+  }
+
+  .stat-card-amber {
+    @apply rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 p-5 text-white shadow-lg;
+  }
+
+  .stat-card-violet {
+    @apply rounded-2xl bg-gradient-to-br from-violet-500 to-purple-700 p-5 text-white shadow-lg;
+  }
+
+  .stat-card-rose {
+    @apply rounded-2xl bg-gradient-to-br from-rose-500 to-pink-700 p-5 text-white shadow-lg;
+  }
+
+  /* Subject card color coding by percentage */
+  .subject-card-good {
+    @apply rounded-xl border-l-4 border-emerald-500 bg-emerald-50 p-4;
+  }
+
+  .subject-card-warn {
+    @apply rounded-xl border-l-4 border-amber-500 bg-amber-50 p-4;
+  }
+
+  .subject-card-poor {
+    @apply rounded-xl border-l-4 border-rose-500 bg-rose-50 p-4;
+  }
+
+  /* Animated number */
+  .animate-count {
+    animation: count-up 1s ease-out both;
+  }
+}
+
+@layer utilities {
+  .reveal-up {
+    animation: reveal-up 500ms ease-out both;
+  }
+
+  .reveal-up-delay-1 {
+    animation: reveal-up 500ms ease-out 100ms both;
+  }
+
+  .reveal-up-delay-2 {
+    animation: reveal-up 500ms ease-out 200ms both;
+  }
+
+  .reveal-up-delay-3 {
+    animation: reveal-up 500ms ease-out 300ms both;
+  }
+
+  .reveal-up-delay-4 {
+    animation: reveal-up 500ms ease-out 400ms both;
+  }
+
+  .reveal-up-delay-5 {
+    animation: reveal-up 500ms ease-out 500ms both;
+  }
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes count-up {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
