@@ -17,7 +17,7 @@ class Command(BaseCommand):
         self._create_courses()
         self._create_performance_records()
         self._create_attendance_records()
-        self._update_sgpa_cgpa()
++        self._update_sgpa_cgpa()
         self.stdout.write(self.style.SUCCESS("Sample data seeded successfully!"))
 
     def _create_users(self):
